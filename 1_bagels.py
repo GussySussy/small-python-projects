@@ -20,10 +20,10 @@ def check_guess(guess, secret_number):
     
     for i in range(len(guess)):
         if guess[i] == secret_number[i]:
-            print(" fermi")
+            print("fermi",end=" ")
             continue
         elif guess[i] in secret_number:
-            print("pico")
+            print("pico",end=" ")
         else:
             count+=1
             
@@ -32,12 +32,11 @@ def check_guess(guess, secret_number):
                     
 
 def game():
-    print(f"I am thinking of a {NUM_DIGITS} number with no repeated digits.\nTry to guess what the number is with the following clues...\n\
+    print(f"\n\nI am thinking of a {NUM_DIGITS} number with no repeated digits.\nTry to guess what the number is with the following clues...\n\
 When I say\t\tIt means\nPico\t\tOne digit is correct but in the wrong position\nFermi\t\tOne digit is correct and in the right position\n\
 Bagels\t\tNo digit is correct")
     print(f"\nI have thought up a number.\nYou have {MAX_GUESSES} tries to guess it...\n")
     secret_number = get_secret_number()
-    print(secret_number)
     for i in range(MAX_GUESSES):
         print(f"\nGuess no. {i}\n")
         x = list(input(">"))
